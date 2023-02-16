@@ -1,20 +1,21 @@
-import numpy as np
 import logging
 from warnings import catch_warnings, simplefilter
-from sklearn.gaussian_process import GaussianProcessRegressor
+
+import numpy as np
 import scipy
+from sklearn.gaussian_process import GaussianProcessRegressor
 
 logging.basicConfig(level=logging.INFO)
 
+
 # TODO:Add decorator
 def objective_function(x, noise_value=0.1):
-
     if noise_value > 0:
         noise = 2 * np.random.rand(1) * noise_value - noise_value / 2
     else:
         noise = 0
 
-    y = x**2 * np.sin(5 * np.pi * x)**6
+    y = x**2 * np.sin(5 * np.pi * x) ** 6
 
     return y + noise
 
@@ -25,13 +26,13 @@ def surrogate_function(model: GaussianProcessRegressor, X: np.array):
 
         return model.predict(X, return_std=True)
 
+
 # Probability of Improvement (PI).
 # Expected Improvement (EI).
 # Lower Confidence Bound (LCB).
 
 
 def acquisition_function(X, X_samples, model):
-
     # Obtain results for the samples already processed
     y_hat, _ = surrogate_function(model, X)
 
@@ -49,7 +50,6 @@ def acquisition_function(X, X_samples, model):
 
 
 def optimisation_acquisition(model, X):
-
     X_sample = np.random.rand(100).reshape(-1, 1)
 
     scores = acquisition_function(X, X_sample, model)
@@ -57,4 +57,3 @@ def optimisation_acquisition(model, X):
     # Obtain the samples that maximises the probability of having higher values
     idx_x_max = np.argmax(scores)
     return X_sample[idx_x_max]
-
