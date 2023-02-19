@@ -12,7 +12,7 @@ def surrogate_function(model: GaussianProcessRegressor, X: np.array):
     with catch_warnings():
         simplefilter("ignore")
 
-        return model.predict(X, return_std=True)
+        return model.predict(X.reshape(-1, 1), return_std=True)
 
 
 # Probability of Improvement (PI).
