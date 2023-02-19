@@ -8,18 +8,6 @@ from sklearn.gaussian_process import GaussianProcessRegressor
 logging.basicConfig(level=logging.INFO)
 
 
-# TODO:Add decorator
-def objective_function(x, noise_value=0.1):
-    if noise_value > 0:
-        noise = 2 * np.random.rand(1) * noise_value - noise_value / 2
-    else:
-        noise = 0
-
-    y = x**2 * np.sin(5 * np.pi * x) ** 6
-
-    return y + noise
-
-
 def surrogate_function(model: GaussianProcessRegressor, X: np.array):
     with catch_warnings():
         simplefilter("ignore")
