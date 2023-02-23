@@ -81,16 +81,23 @@ def run_optimisation(obj_func: Callable, noise_level: float = 0.1) -> None:
     y_pred, std_pred = bo.surrogate_function(model=model, X=X_ideal.reshape(-1, 1))
 
     # Plotting
-    plt.plot(X_ideal, y_ideal, color='dodgerblue', label='Objective fcn')
-    plt.plot(X_ideal, y_pred, color='orange', label='Surrogated fcn')
-    plt.plot(x_optim, y_optim, "x", color='blue', label='Optimal value [ideal]')
-    plt.plot(est_x_optim, est_y_optim, "o", color='orangered', linewidth=10, label='Optimal value [predicted]')
+    plt.plot(X_ideal, y_ideal, color="dodgerblue", label="Objective fcn")
+    plt.plot(X_ideal, y_pred, color="orange", label="Surrogated fcn")
+    plt.plot(x_optim, y_optim, "x", color="blue", label="Optimal value [ideal]")
+    plt.plot(
+        est_x_optim,
+        est_y_optim,
+        "o",
+        color="orangered",
+        linewidth=10,
+        label="Optimal value [predicted]",
+    )
 
-    plt.scatter(sample_records, readings_record, color='deepskyblue', label='Samples')
-    
+    plt.scatter(sample_records, readings_record, color="deepskyblue", label="Samples")
+
     plt.legend()
     plt.grid()
-    
+
     plt.show()
 
 
