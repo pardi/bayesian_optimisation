@@ -10,10 +10,11 @@ scipy = "*"
 isort = "*"
 black = "*"
 flake8 = "*"
+tqdm = "~=4.64.1"
 
 [dev-packages]
-pytest = "~=6.2.5"
-"pytest-flake8" = "~=1.0.7"
+pytest = "~=7.1.2"
+"pytest-flake8" = "~=1.1.1"
 scikit-learn = "*"
 
 [requires]

@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 from sklearn.gaussian_process import GaussianProcessRegressor
 
-import bayesian_opt.hidden_fcns as hf
+import bayesianopt.hidden_fcns as hf
 import examples.example_single_var_fcn as ex
 
 

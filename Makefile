@@ -19,6 +19,9 @@ lint:
 
 .PHONY: install
 install:
-
 	pipenv install --dev
+
+.PHONY: test
+test:
+	pipenv run pytest
 
