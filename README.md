@@ -1,3 +1,5 @@
+![example workflow](https://github.com/pardi/bayesian_optimisation/actions/workflows/python-app.yml/badge.svg)
+
 # Bayesian Optimisation suite
 This repo contains a collection of bayesian optimisation algorithms. 
 
