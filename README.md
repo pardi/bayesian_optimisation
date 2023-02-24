@@ -1,5 +1,4 @@
-![example workflow](https://coveralls.io/repos/pardi/bayesian_optimisation/badge.svg?branch=main&service=github)
-![example branch parameter](https://github.com/pardi/bayesian_optimisation/actions/workflows/main.yml/badge.svg?branch=main)
+![example branch parameter](https://github.com/pardi/bayesian_optimisation/actions/workflows/python-app.yml/badge.svg?branch=main)
 
 # Bayesian Optimisation suite
 This repo contains a collection of bayesian optimisation algorithms. 
