@@ -6,8 +6,8 @@ import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
 from tqdm import tqdm
 
-from bayesian_opt import bayesian_optimisation as bo
-from bayesian_opt.hidden_fcns import single_var_obj_fcn
+from bayesianopt import bayesian_optimisation as bo
+from bayesianopt.hidden_fcns import single_var_obj_fcn
 
 logging.basicConfig(level=logging.INFO)
 
