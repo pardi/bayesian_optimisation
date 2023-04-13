@@ -9,7 +9,7 @@ Dependencies:
 - python@3.9
 - pipenv
 
-The package uses pipenv as virtual environment but a `Makefile` is provided for simplify the pipenv environment.
+The package uses pipenv as virtual environment but a `Makefile` is provided for simplify the installation.
 
 The `Makefile` calls follows the usage:
 
